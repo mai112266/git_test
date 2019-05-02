@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>TODO リスト</title>
+  <title>TODO リスト2</title>
 </head>
 
 <!-- ボディ -->
@@ -17,16 +17,37 @@
       <ol>id=todolistの要素にli要素を追加する</ol>
       <ol>li要素に追加する内容を配列で持つ</ol>
       <ol></ol>
-    </ul>    
+    </ul>
     <p>現在登録されているTODOの数 <span id="total"></span>個</p>
-    <ul id="todolist"></ul>
+    <ul id="todolist">
+      <ol>test</ol>
+    </ul>
 
     <p>新たなTODOを追加してください</p>
-    <input id="new_item">
-    <button>追加</button>
+    <input id="new_item" >
+    <button onclick = "additem()">追加</button>
+
   </div>
 
   <script>
+    function additem(){
+      let ol = document.createElement("ol")
+      let del_btn  = document.createElement("button")
+    ol.textContent = document.getElementById("new_item").value 
+    del_btn.textContent = "削除"
+
+    let todolist = document.getElementById("todolist")
+
+    ol.appendChild(del_btn)
+    todolist.appendChild(ol)
+    document.getElementById("total").textContent = document.getElementById("todolist").childElementCount;
+
+    }
+
+    document.getElementById("total").textContent = document.getElementById("todolist").childElementCount;
+
+
+    
   </script>
 </body>
 
